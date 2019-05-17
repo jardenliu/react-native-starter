@@ -4,7 +4,7 @@
 - [x] Andoroid
 - [x] iOS
 - [x] MacOS
-- [ ] Windows
+- [x] Windows
 
 
 ## Getting Started

@@ -21,6 +21,7 @@ const platformBlacklists = {
     /node_modules\/react-native-macos\/.*/
   ],
   android: ['.web.js', '.ios.js', /node_modules\/react-native-macos\/.*/],
+  windows: ['.web.js', /node_modules\/react-native-macos\/.*/],
   macos: ['.ios.js', '.android.js', /node_modules\/react-native\/.*/]
 }
 
@@ -39,12 +40,12 @@ function blacklist(platform, additionalBlacklist) {
   // eslint-disable-next-line
   return new RegExp(
     '(' +
-      (additionalBlacklist || [])
-        .concat(sharedBlacklist)
-        .concat(platformBlacklists[platform] || [])
-        .map(escapeRegExp)
-        .join('|') +
-      ')$'
+    (additionalBlacklist || [])
+    .concat(sharedBlacklist)
+    .concat(platformBlacklists[platform] || [])
+    .map(escapeRegExp)
+    .join('|') +
+    ')$'
   )
 }
 
@@ -56,9 +57,8 @@ module.exports = {
     ) {
       return ['react-native-macos']
     }
-    return ['react-native']
+    return ['react-native', 'react-native-windows']
   },
-  getEnableBabelRCLookup: () => false,
   getBlacklistRE(platform) {
     if (
       process &&
