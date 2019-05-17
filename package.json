@@ -8,7 +8,7 @@
     "android": "react-native run-android",
     "macos": "react-native-macos run-macos",
     "windows": "react-native run-windows",
-    "pre-packager":"node ./build/prebuild.js",
+    "pre-packager":"node ./scripts/prebuild.js",
     "fixrunios": "sed -i '' 's/!== 0/=== -1/g' node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js",
     "test": "jest"
   },

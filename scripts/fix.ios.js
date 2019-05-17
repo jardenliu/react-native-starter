@@ -1,0 +1,1 @@
+// sed -i '' 's/!== 0/=== -1/g' node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js
